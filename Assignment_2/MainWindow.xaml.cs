@@ -75,13 +75,18 @@ namespace Assignment_2
         // Ser all detaljerad information om en kontakt
         private void lv_Contacts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var contact = (ContactPerson)lv_Contacts.SelectedItems[0]!;
-            tb_FirstName.Text = contact.FirstName;
-            tb_LastName.Text = contact.LastName;
-            tb_Email.Text = contact.Email;
-            tb_StreetName.Text = contact.StreetName;
-            tb_PostalCode.Text = contact.PostalCode;
-            tb_City.Text = contact.City;
+            try
+            {
+                var contact = (ContactPerson)lv_Contacts.SelectedItems[0]!;
+                tb_FirstName.Text = contact.FirstName;
+                tb_LastName.Text = contact.LastName;
+                tb_Email.Text = contact.Email;
+                tb_StreetName.Text = contact.StreetName;
+                tb_PostalCode.Text = contact.PostalCode;
+                tb_City.Text = contact.City;
+            }
+            catch { }
+           
 
         }
         // Metod för att kunna uppdatera kontakternas information (knapp)
